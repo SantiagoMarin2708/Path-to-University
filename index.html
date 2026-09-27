@@ -902,27 +902,58 @@ Párrafo 3 (Compromiso): Para asegurar mi éxito en el programa me comprometo a.
         document.getElementById('paraCount').innerText = paragraphs.length;
     }
 
-    // Form Submit Handler
+       // Form Submit Handler CONECTADO A GOOGLE SHEET
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMQaNNKlES5BpMXcS6_RGWAKDJyhGWLiaZZ8-q2-i-_H-QHg6FFMxvx2HaxC2jIT_74Q/exec';
+
     function handleFormSubmit(e) {
         e.preventDefault();
 
         const text = document.getElementById('essayText').value.trim();
-        const wordCount = text ? text.split(/\s+/).filter(w => w.length > 0).length : 0;
+        const wordCount = text? text.split(/\s+/).filter(w => w.length > 0).length : 0;
 
         if (wordCount > 500) {
-            alert('Tu ensayo supera el límite máximo permitido de 500 palabras.');
+            alert('Tu ensayo supera el límite máximo de 500 palabras.');
             return;
         }
 
-        const studentName = document.getElementById('studentName').value;
-        const studentEmail = document.getElementById('studentEmail').value;
-        const randomRef = 'PTU-2026-' + Math.floor(1000 + Math.random() * 9000);
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
 
-        document.getElementById('modalRefId').innerText = randomRef;
-        document.getElementById('modalStudentName').innerText = studentName;
-        document.getElementById('modalStudentEmail').innerText = studentEmail;
+        const datos = {
+          nombre: document.getElementById('studentName').value,
+          padres: document.getElementById('parentsName').value,
+          correo: document.getElementById('studentEmail').value,
+          telefono: document.getElementById('studentPhone').value,
+          edad: document.getElementById('studentAge').value,
+          colegio: document.getElementById('studentSchool').value,
+          ensayo: document.getElementById('essayText').value,
+          archivo: document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo'
+        };
 
-        document.getElementById('successModal').classList.remove('hidden');
+        // Preparamos datos para el Sheet
+        const params = new URLSearchParams();
+        params.append('nombre', datos.nombre);
+        params.append('correo', datos.correo);
+        params.append('telefono', datos.telefono);
+        params.append('universidad', datos.colegio + ' | Edad:' + datos.edad + ' | Padres:' + datos.padres);
+        params.append('mensaje', 'ENSAYO: ' + datos.ensayo + ' | ARCHIVO: ' + datos.archivo);
+
+        fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params })
+         .then(() => {
+            const randomRef = 'PTU-2026-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('modalRefId').innerText = randomRef;
+            document.getElementById('modalStudentName').innerText = datos.nombre;
+            document.getElementById('modalStudentEmail').innerText = datos.correo;
+            document.getElementById('successModal').classList.remove('hidden');
+            submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Enviar Solicitud de Postulación</span>';
+            submitBtn.disabled = false;
+          })
+         .catch(error => {
+            alert('Hubo un error, intenta de nuevo: ' + error.message);
+            submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Enviar Solicitud</span>';
+            submitBtn.disabled = false;
+          });
     }
 
     function closeModal() {
@@ -935,31 +966,3 @@ Párrafo 3 (Compromiso): Para asegurar mi éxito en el programa me comprometo a.
 
     // FAQ Accordion Toggle
     function toggleFaq(button) {
-        const item = button.parentElement;
-        const answer = item.querySelector('.faq-answer');
-        const icon = button.querySelector('i');
-
-        if (answer.classList.contains('hidden')) {
-            answer.classList.remove('hidden');
-            icon.style.transform = 'rotate(180deg)';
-        } else {
-            answer.classList.add('hidden');
-            icon.style.transform = 'rotate(0deg)';
-        }
-    }
-
-    // FAQ Search Filter
-    function filterFaqs() {
-        const query = document.getElementById('faqSearch').value.toLowerCase();
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            const text = item.innerText.toLowerCase();
-            if (text.includes(query)) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    }
-</script>
