@@ -1,43 +1,92 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Path to University</title><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{brand:{500:'#0284c7',600:'#0369a1'}},fontFamily:{sans:['Inter','sans-serif']}}}}</script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></head><body class="bg-slate-50 text-slate-800">
-<header class="sticky top-0 z-50 bg-white border-b shadow-sm"><div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"><div class="flex items-center gap-2 font-black text-xl"><div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center">P</div>PATH TO UNIVERSITY</div><a href="#form" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm">Postularme</a></div></header>
-<main><section class="bg-gradient-to-br from-slate-900 via-blue-800 to-sky-500 text-white py-20 text-center px-4"><h1 class="text-4xl sm:text-5xl font-black">Inicia un camino hacia un mejor futuro con <span class="text-sky-300">Path to University</span></h1><p class="mt-4 text-slate-200">Programa 100% gratuito para estudiantes de 6° en Cali</p><a href="#form" class="inline-block mt-8 bg-sky-400 text-slate-900 font-bold px-8 py-4 rounded-xl">Iniciar Solicitud</a></section>
-<section id="form" class="py-16"><div class="max-w-3xl mx-auto px-4 bg-white rounded-3xl shadow-xl border p-8"><div class="bg-blue-600 text-white p-6 rounded-2xl mb-8"><h2 class="text-2xl font-black">Formulario Oficial</h2><p class="text-sm text-blue-100">Tus datos llegarán directo a nuestro Google Sheet</p></div>
-<form id="studentAppForm" onsubmit="handleSubmit(event)" class="space-y-6">
-<input type="text" required id="studentName" placeholder="Nombre Completo *" class="w-full p-3 border rounded-xl">
-<input type="text" required id="parentsName" placeholder="Padres / Acudientes *" class="w-full p-3 border rounded-xl">
-<div class="grid sm:grid-cols-2 gap-4"><input type="email" required id="studentEmail" placeholder="Correo *" class="w-full p-3 border rounded-xl"><input type="tel" required id="studentPhone" placeholder="Teléfono *" class="w-full p-3 border rounded-xl"></div>
-<div class="grid sm:grid-cols-2 gap-4"><input type="number" required id="studentAge" min="10" max="15" value="11" class="w-full p-3 border rounded-xl"><input type="text" required id="studentSchool" placeholder="Colegio *" class="w-full p-3 border rounded-xl"></div>
-<div class="border-2 border-dashed rounded-2xl p-6 text-center bg-slate-50 relative"><input type="file" id="fileAttachment" accept=".pdf,.jpg,.png" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('fileName').innerText=this.files[0].name"><p class="font-bold text-sm">Boletín de Notas (Foto/PDF)</p><p id="fileName" class="text-xs text-slate-500 mt-1">Haz clic para seleccionar</p></div>
-<textarea id="essayText" rows="8" required placeholder="Escribe tu ensayo en 3 párrafos aquí (max 500 palabras) *" class="w-full p-4 border rounded-2xl bg-slate-50"></textarea>
-<button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl"><i class="fa-solid fa-paper-plane"></i> Enviar Solicitud</button>
-</form></div></section></main>
-<div id="successModal" class="fixed inset-0 bg-slate-900/70 hidden flex items-center justify-center p-4 z-50"><div class="bg-white rounded-3xl p-8 text-center max-w-md w-full"><div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-4"><i class="fa-solid fa-check"></i></div><h3 class="text-2xl font-black">¡Enviado!</h3><p class="text-sm text-slate-600 mt-2">Ya está en el Google Sheet. Código: <span id="code" class="font-bold"></span></p><button onclick="location.reload()" class="mt-6 w-full bg-blue-600 text-white font-bold py-3 rounded-xl">Aceptar</button></div></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Path to University - Programa Gratuito Cali</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>body{font-family:'Inter',sans-serif}</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3 font-black text-xl"><div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center">P</div> PATH TO UNIVERSITY</div>
+<a href="#form" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm">Postularme Ahora</a>
+</div>
+</header>
+
+<section class="bg-gradient-to-br from-slate-900 via-blue-800 to-sky-500 text-white">
+<div class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<span class="bg-sky-400/20 border border-sky-300/30 text-sky-200 text-xs font-bold px-4 py-2 rounded-full">PROGRAMA 100% GRATUITO - CALI 2026</span>
+<h1 class="text-5xl font-black leading-[1.1] mt-6">Inicia un camino hacia un mejor futuro con <span class="text-sky-300">Path to University</span></h1>
+<p class="mt-6 text-lg text-slate-200 leading-relaxed">Somos una organización sin ánimo de lucro que ayuda a estudiantes de 6° grado en Cali con alto rendimiento académico pero con recursos limitados, a soñar con la universidad y prepararse desde temprano.</p>
+<div class="mt-8 flex gap-4"><a href="#form" class="bg-white text-blue-700 font-black px-8 py-4 rounded-xl">Iniciar mi Postulación <i class="fa-solid fa-arrow-right ml-2"></i></a><a href="#que-es" class="border border-white/30 px-8 py-4 rounded-xl font-bold">Conocer más</a></div>
+<div class="mt-10 flex gap-8 text-sm"><div><div class="font-black text-2xl">120+</div><div class="text-slate-300">Estudiantes apoyados</div></div><div><div class="font-black text-2xl">100%</div><div class="text-slate-300">Gratuito</div></div><div><div class="font-black text-2xl">6°</div><div class="text-slate-300">Grado objetivo</div></div>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur p-8 rounded-3xl border border-white/20">
+<h3 class="font-black text-xl">¿Qué incluye el programa?</h3>
+<ul class="mt-6 space-y-4">
+<li class="flex gap-3"><i class="fa-solid fa-check bg-emerald-400 text-slate-900 w-6 h-6 rounded-full flex items-center justify-center text-xs"></i> <span><b>Mentorías</b> personalizadas con universitarios</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check bg-emerald-400 text-slate-900 w-6 h-6 rounded-full flex items-center justify-center text-xs"></i> <span><b>Talleres de orientación vocacional</b> y proyecto de vida</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check bg-emerald-400 text-slate-900 w-6 h-6 rounded-full flex items-center justify-center text-xs"></i> <span><b>Apoyo académico</b> y hábitos de estudio</span></li>
+<li class="flex gap-3"><i class="fa-solid fa-check bg-emerald-400 text-slate-900 w-6 h-6 rounded-full flex items-center justify-center text-xs"></i> <span><b>Conexión con oportunidades</b> de becas futuras</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="que-es" class="py-20 max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-3xl shadow-sm border"><div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl"><i class="fa-solid fa-graduation-cap"></i></div><h3 class="font-black text-lg mt-4">Nuestra Misión</h3><p class="text-sm text-slate-600 mt-2">Cerrar la brecha de oportunidades. Creemos que el talento no tiene estrato, y que un niño de 11 años en Cali merece las mismas herramientas para soñar en grande.</p></div>
+<div class="bg-white p-8 rounded-3xl shadow-sm border"><div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-xl"><i class="fa-solid fa-users"></i></div><h3 class="font-black text-lg mt-4">¿Para quién es?</h3><p class="text-sm text-slate-600 mt-2">Estudiantes que estén en 6° grado, vivan en Cali, tengan buen rendimiento académico, y cuyas familias no tengan los recursos para pagar programas pre-universitarios privados.</p></div>
+<div class="bg-white p-8 rounded-3xl shadow-sm border"><div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl"><i class="fa-solid fa-file-lines"></i></div><h3 class="font-black text-lg mt-4">Requisitos</h3><p class="text-sm text-slate-600 mt-2">1. Estar en 6° grado<br>2. Boletín de notas del último periodo<br>3. Ensayo corto de motivación (3 párrafos)<br>4. Autorización de padres</p></div>
+</section>
+
+<section id="form" class="py-16 bg-slate-100">
+<div class="max-w-3xl mx-auto px-4 bg-white rounded-3xl shadow-xl border p-8 md:p-10">
+<div class="bg-blue-600 text-white p-6 rounded-2xl mb-8"><h2 class="text-2xl font-black">Formulario Oficial de Postulación</h2><p class="text-sm text-blue-100 mt-1">Completa todos los campos. Tu información llegará segura a nuestro equipo.</p></div>
+
+<form id="studentAppForm" onsubmit="handleSubmit(event)" class="space-y-5">
+<input type="text" required id="studentName" placeholder="Nombre Completo del Estudiante *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50">
+<input type="text" required id="parentsName" placeholder="Nombre de Padres / Acudientes *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50">
+<div class="grid sm:grid-cols-2 gap-4"><input type="email" required id="studentEmail" placeholder="Correo de contacto *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50"><input type="tel" required id="studentPhone" placeholder="Teléfono / WhatsApp *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50"></div>
+<div class="grid sm:grid-cols-2 gap-4"><div><label class="text-xs font-bold text-slate-500">Edad</label><input type="number" required id="studentAge" min="10" max="15" value="11" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50"></div><input type="text" required id="studentSchool" placeholder="Colegio Actual *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 mt-5"></div>
+
+<div class="border-2 border-dashed border-slate-300 rounded-2xl p-6 text-center bg-slate-50 relative hover:bg-white transition"><input type="file" id="fileAttachment" accept=".pdf,.jpg,.jpeg,.png" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('fileName').innerText='Archivo: '+this.files[0].name"><p class="font-bold text-sm"><i class="fa-solid fa-cloud-arrow-up mr-2"></i>Boletín de Notas</p><p id="fileName" class="text-xs text-slate-500 mt-1">PDF, JPG o PNG - Haz clic para seleccionar</p></div>
+
+<div><label class="text-sm font-bold">Tu ensayo de motivación (3 párrafos) *</label><p class="text-xs text-slate-500 mb-2">Cuéntanos: ¿Quién eres? ¿Cuál es tu sueño? ¿Por qué quieres entrar a Path to University?</p><textarea id="essayText" rows="8" required maxlength="3000" placeholder="Escribe aquí tu ensayo..." class="w-full p-4 border border-slate-200 rounded-2xl bg-slate-50"></textarea></div>
+
+<button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-xl text-lg shadow-lg"><i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud</button>
+<p class="text-center text-xs text-slate-400">Al enviar aceptas el tratamiento de datos para fines del programa.</p>
+</form>
+</div>
+</section>
+
+<footer class="py-10 text-center text-sm text-slate-500">© 2026 Path to University - Cali, Colombia | Programa gratuito</footer>
+
+<div id="successModal" class="fixed inset-0 bg-slate-900/70 hidden flex items-center justify-center p-4 z-50"><div class="bg-white rounded-3xl p-8 text-center max-w-md w-full shadow-2xl"><div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-4"><i class="fa-solid fa-check"></i></div><h3 class="text-2xl font-black">¡Solicitud Enviada!</h3><p class="text-sm text-slate-600 mt-2">La hemos recibido correctamente. Revisaremos tu ensayo y boletín. Código: <span id="code" class="font-bold text-blue-600"></span></p><p class="text-xs text-slate-400 mt-2">Ya puedes verlo en tu Google Sheet.</p><button onclick="location.reload()" class="mt-6 w-full bg-blue-600 text-white font-bold py-3 rounded-xl">Perfecto</button></div></div>
+
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzAydf9-1ThrIo_wUtW-eDJAmbyfes8wox5MtKqR_KgrYvi8JrYID2sx3guVsP6kvo_4w/exec';
 function handleSubmit(e){
  e.preventDefault();
  const btn=document.getElementById('submitBtn');
- btn.innerHTML='Enviando...'; btn.disabled=true;
- const datos={
-   nombre: document.getElementById('studentName').value,
-   padres: document.getElementById('parentsName').value,
-   correo: document.getElementById('studentEmail').value,
-   telefono: document.getElementById('studentPhone').value,
-   edad: document.getElementById('studentAge').value,
-   colegio: document.getElementById('studentSchool').value,
-   ensayo: document.getElementById('essayText').value,
-   archivo: document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo'
- };
+ btn.innerHTML='<i class="fa-solid fa-spinner fa-spin mr-2"></i>Enviando...'; btn.disabled=true;
  const params=new URLSearchParams();
- params.append('nombre',datos.nombre);
- params.append('correo',datos.correo);
- params.append('telefono',datos.telefono);
- params.append('universidad',datos.colegio+' | Edad:'+datos.edad+' | Padres:'+datos.padres);
- params.append('mensaje','ENSAYO: '+datos.ensayo+' | ARCHIVO: '+datos.archivo);
+ params.append('nombre', document.getElementById('studentName').value);
+ params.append('correo', document.getElementById('studentEmail').value);
+ params.append('telefono', document.getElementById('studentPhone').value);
+ params.append('universidad', document.getElementById('studentSchool').value + ' | Edad:' + document.getElementById('studentAge').value + ' | Padres:' + document.getElementById('parentsName').value);
+ params.append('mensaje', 'ENSAYO: ' + document.getElementById('essayText').value + ' | ARCHIVO: ' + (document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo'));
  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:params}).then(()=>{
    document.getElementById('code').innerText='PTU-'+Math.floor(1000+Math.random()*9000);
    document.getElementById('successModal').classList.remove('hidden');
    btn.innerHTML='Enviar Solicitud'; btn.disabled=false;
  }).catch(()=>{alert('Error, intenta de nuevo'); btn.innerHTML='Enviar Solicitud'; btn.disabled=false;});
 }
-</script></body></html>
+</script>
+</body>
+</html>
