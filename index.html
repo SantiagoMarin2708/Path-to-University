@@ -147,7 +147,7 @@
   <section id="requisitos" class="py-20 bg-slate-100/70 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
       
-      <!-- Información / Requisitos idénticos a la imagen -->
+      <!-- Información / Requisitos -->
       <div class="lg:col-span-5 space-y-6">
         <h2 class="text-3xl font-extrabold text-blue-700 leading-tight">
           Si deseas aspirar a este plan debes tener en cuenta esto antes de llenar el formulario.
@@ -247,10 +247,21 @@
               </div>
             </div>
 
-            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-5 text-center bg-slate-50 relative hover:bg-slate-100 transition">
+            <!-- ADJUNTAR BOLETÍN DE NOTAS / ENSAYO -->
+            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-4 text-center bg-slate-50 relative hover:bg-slate-100 transition">
               <input type="file" id="fileAttachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('fileName').innerText='Archivo: '+this.files[0].name">
               <p class="font-bold text-sm text-slate-700"><i class="fa-solid fa-cloud-arrow-up mr-2 text-blue-600"></i>Boletín de Notas / Ensayo</p>
               <p id="fileName" class="text-xs text-slate-500 mt-1">PDF, Word, JPG o PNG - Haz clic para seleccionar</p>
+            </div>
+
+            <!-- ADJUNTAR AUTORIZACIÓN FIRMADA DE LOS PADRES (OBLIGATORIO) -->
+            <div>
+              <label class="text-xs font-bold text-slate-700 block mb-1">Autorización firmada de los padres (PDF) *</label>
+              <div class="border-2 border-dashed border-slate-300 rounded-2xl p-4 text-center bg-slate-50 relative hover:bg-slate-100 transition">
+                <input type="file" required id="parentAuthAttachment" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('authFileName').innerText='Archivo: '+this.files[0].name">
+                <p class="font-bold text-sm text-slate-700"><i class="fa-solid fa-file-signature mr-2 text-purple-600"></i>Subir Autorización de Padres *</p>
+                <p id="authFileName" class="text-xs text-slate-500 mt-1">Solo formato PDF - Obligatorio</p>
+              </div>
             </div>
 
             <div>
@@ -259,10 +270,17 @@
               <textarea id="essayText" rows="5" required maxlength="3000" placeholder="Escribe aquí tu ensayo..." class="w-full p-3.5 border border-slate-200 rounded-2xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600"></textarea>
             </div>
 
+            <!-- CASILLA DE CONSENTIMIENTO OBLIGATORIA (SIN PRE-MARCAR) -->
+            <div class="flex items-start gap-3 pt-2">
+              <input type="checkbox" required id="dataConsent" class="mt-1 w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer">
+              <label for="dataConsent" class="text-xs text-slate-600 leading-relaxed cursor-pointer">
+                Autorizo expresamente el tratamiento de los datos personales de mi hijo/a para fines exclusivos del proceso de selección y desarrollo del programa, de acuerdo con nuestra <a href="politica-datos.html" target="_blank" class="text-blue-600 font-bold underline hover:text-blue-800">Política de Tratamiento de Datos</a>. *
+              </label>
+            </div>
+
             <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-xl text-base shadow-lg shadow-blue-600/20 transition">
               <i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud
             </button>
-            <p class="text-center text-xs text-slate-400">Al enviar aceptas el tratamiento de datos para fines del programa.</p>
           </form>
         </div>
       </div>
@@ -371,7 +389,13 @@
         <img src="logo.jpg" alt="Path To University Logo" class="h-8 md:h-10 w-auto object-contain bg-white/10 p-1 rounded-lg backdrop-blur">
       </div>
 
-      <p class="text-xs text-slate-400">© 2026 Path To University - Cali, Colombia | Programa gratuito</p>
+      <!-- CORREO DE CONTACTO Y DERECHOS -->
+      <div class="text-center md:text-left space-y-1">
+        <p class="text-xs text-slate-400">© 2026 Path To University - Cali, Colombia | Programa gratuito</p>
+        <p class="text-xs text-blue-400 font-medium">
+          <i class="fa-solid fa-envelope mr-1.5"></i>Contacto: <a href="mailto:contacto@pathtouniversity.co" class="hover:underline">contacto@pathtouniversity.co</a>
+        </p>
+      </div>
 
       <div class="flex gap-4 text-slate-400 text-lg">
         <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
@@ -409,7 +433,7 @@
       params.append('correo', document.getElementById('studentEmail').value);
       params.append('telefono', document.getElementById('studentPhone').value);
       params.append('universidad', document.getElementById('studentSchool').value + ' | Edad:' + document.getElementById('studentAge').value + ' | Padres:' + document.getElementById('parentsName').value);
-      params.append('mensaje', 'ENSAYO: ' + document.getElementById('essayText').value + ' | ARCHIVO: ' + (document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo'));
+      params.append('mensaje', 'ENSAYO: ' + document.getElementById('essayText').value + ' | ARCHIVO NOTAS: ' + (document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo') + ' | AUTORIZACIÓN PADRES: ' + (document.getElementById('parentAuthAttachment').files[0]?.name || 'Sin archivo'));
 
       fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params })
         .then(() => {
