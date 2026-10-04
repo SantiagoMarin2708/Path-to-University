@@ -16,12 +16,20 @@
   <!-- HEADER / NAVEGACIÓN -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3 font-black text-xl">
-        <div class="bg-blue-600 text-white font-black text-xl w-10 h-10 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/20">
-          P
+      
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-3">
+        <!-- Reemplaza "logo.png" por la ruta o URL de tu logo -->
+        <img src="logo.png" alt="Path To University Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+        
+        <!-- Fallback por si la imagen no carga -->
+        <div id="fallback-logo" class="hidden items-center gap-3">
+          <div class="bg-blue-600 text-white font-black text-xl w-10 h-10 rounded-xl flex items-center justify-center shadow-md shadow-blue-500/20">
+            P
+          </div>
+          <span class="font-extrabold text-lg tracking-tight text-slate-900">PATH TO UNIVERSITY</span>
         </div>
-        <span class="font-extrabold text-lg tracking-tight text-slate-900">PATH TO UNIVERSITY</span>
-      </div>
+      </a>
       
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
         <a href="#como-funciona" class="hover:text-blue-600 transition">Cómo funciona</a>
@@ -37,22 +45,22 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20 lg:py-28 overflow-hidden">
+  <section class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20 lg:py-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10">
       
       <!-- Texto Principal -->
-      <div class="lg:col-span-7 space-y-6">
+      <div class="lg:col-span-6 space-y-6">
         <span class="bg-sky-400/20 border border-sky-300/30 text-sky-200 text-xs font-bold px-4 py-2 rounded-full inline-block">
           PROGRAMA 100% GRATUITO - CALI 2026
         </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+        <h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tight">
           Inicia un camino hacia un mejor futuro <br>
           <span class="text-blue-400">Path To University</span>
         </h1>
-        <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl">
+        <p class="text-slate-300 text-base leading-relaxed max-w-2xl">
           Somos un grupo de docentes apasionados por el proceso de aprendizaje para aquellos estudiantes que tienen el impulso pero no cuentan con los recursos para acceder a educación de calidad.
         </p>
-        <div class="pt-4 flex flex-wrap gap-4">
+        <div class="pt-2 flex flex-wrap gap-4">
           <a href="#form" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-xl text-sm shadow-lg shadow-blue-600/30 transition">
             Iniciar mi Postulación <i class="fa-solid fa-arrow-right ml-2"></i>
           </a>
@@ -62,18 +70,20 @@
         </div>
       </div>
 
-      <!-- Tarjeta Presentación del Fundador -->
-      <div class="lg:col-span-5">
-        <div class="bg-slate-800/80 border border-slate-700/60 rounded-3xl p-6 shadow-2xl backdrop-blur-md">
-          <div class="relative aspect-video rounded-2xl bg-slate-950 overflow-hidden mb-6 group flex items-center justify-center border border-slate-700">
-            <div class="text-center p-4">
-              <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:scale-110 transition cursor-pointer">
-                <i class="fa-solid fa-play text-white text-xl ml-1"></i>
-              </div>
-              <span class="text-xs font-semibold tracking-wider text-slate-300 uppercase">Watch on YouTube</span>
-            </div>
+      <!-- VIDEO PRINCIPAL DE YOUTUBE -->
+      <div class="lg:col-span-6">
+        <div class="bg-slate-800/80 border border-slate-700/60 rounded-3xl p-4 shadow-2xl backdrop-blur-md">
+          <div class="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-700 shadow-inner">
+            <iframe 
+              class="w-full h-full" 
+              src="https://www.youtube.com/embed/UAzeb9ukmMY" 
+              title="Path To University - Video Principal" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
           </div>
-          <p class="text-sm text-slate-300 italic leading-relaxed">
+          <p class="text-xs text-slate-300 italic leading-relaxed mt-4 px-2 text-center">
             "Mi nombre es Klasis Smit. Nací en Cali, Colombia y actualmente vivo en los Estados Unidos. Me apasionan las matemáticas, la computación, los deportes y la educación."
           </p>
         </div>
@@ -142,7 +152,7 @@
     </div>
   </section>
 
-  <!-- SECCIÓN: REQUISITOS Y FORMULARIO COMPLETO -->
+  <!-- SECCIÓN: REQUISITOS Y FORMULARIO -->
   <section id="requisitos" class="py-20 bg-slate-100/70 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
       
@@ -232,30 +242,33 @@
     </div>
   </section>
 
-  <!-- SECCIÓN: TESTIMONIOS -->
+  <!-- SECCIÓN: TESTIMONIOS CON EL NUEVO VIDEO DE YOUTUBE -->
   <section id="testimonios" class="py-20 max-w-7xl mx-auto px-6">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="text-blue-600 text-xs font-extrabold uppercase tracking-widest bg-blue-50 px-3 py-1.5 rounded-lg">Testimonios</span>
       <h2 class="text-3xl font-extrabold text-slate-900 mt-4">Un mejor futuro te espera</h2>
+      <p class="text-slate-600 mt-2 text-sm">Conoce las experiencias de nuestros estudiantes y familias.</p>
     </div>
 
+    <!-- Video de Testimonio Principal -->
     <div class="max-w-4xl mx-auto">
-      <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
-        <div class="w-full md:w-1/2 aspect-video bg-slate-950 rounded-2xl flex items-center justify-center border border-slate-800">
-          <div class="text-center">
-            <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg cursor-pointer hover:scale-105 transition">
-              <i class="fa-solid fa-play text-white ml-1"></i>
-            </div>
-            <span class="text-[10px] text-slate-400 uppercase font-semibold">Watch on YouTube</span>
-          </div>
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl space-y-4">
+        <div class="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-md">
+          <!-- Video de Testimonios: 3_I9sq54wTs -->
+          <iframe 
+            class="w-full h-full" 
+            src="https://www.youtube.com/embed/3_I9sq54wTs" 
+            title="Testimonios - Path To University" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
-
-        <div class="w-full md:w-1/2 space-y-4">
-          <i class="fa-solid fa-quote-left text-blue-500 text-3xl"></i>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Conoce las historias de estudiantes que han transformado su desarrollo académico a través de nuestra comunidad.
+        <div class="pt-2">
+          <h4 class="font-bold text-slate-900 text-lg">Historias de Impacto</h4>
+          <p class="text-sm text-slate-600 mt-1">
+            Escucha a los estudiantes y familias compartiendo su experiencia en Path To University.
           </p>
-          <span class="block text-xs font-bold text-blue-400">Comunidad Path To University</span>
         </div>
       </div>
     </div>
@@ -326,8 +339,12 @@
   <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
-        <div class="bg-blue-600 text-white font-black text-lg w-8 h-8 rounded-lg flex items-center justify-center">P</div>
-        <span class="font-extrabold text-base tracking-tight text-white">PATH TO UNIVERSITY</span>
+        <!-- Reemplaza logo.png por la imagen de tu logo -->
+        <img src="logo.png" alt="Path To University Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('footer-fallback-logo').style.display='flex';">
+        <div id="footer-fallback-logo" class="hidden items-center gap-3">
+          <div class="bg-blue-600 text-white font-black text-lg w-8 h-8 rounded-lg flex items-center justify-center">P</div>
+          <span class="font-extrabold text-base tracking-tight text-white">PATH TO UNIVERSITY</span>
+        </div>
       </div>
 
       <p class="text-xs text-slate-400">© 2026 Path To University - Cali, Colombia | Programa gratuito</p>
@@ -340,7 +357,7 @@
     </div>
   </footer>
 
-  <!-- MODAL DE ÉXITO DE TU CÓDIGO -->
+  <!-- MODAL DE ÉXITO -->
   <div id="successModal" class="fixed inset-0 bg-slate-900/70 hidden flex items-center justify-center p-4 z-50">
     <div class="bg-white rounded-3xl p-8 text-center max-w-md w-full shadow-2xl">
       <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
@@ -353,7 +370,7 @@
     </div>
   </div>
 
-  <!-- SCRIPT EXACTO DE ENVÍO A TU GOOGLE APPS SCRIPT -->
+  <!-- SCRIPT DE ENVÍO A GOOGLE SHEETS -->
   <script>
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzAydf9-1ThrIo_wUtW-eDJAmbyfes8wox5MtKqR_KgrYvi8JrYID2sx3guVsP6kvo_4w/exec';
     
