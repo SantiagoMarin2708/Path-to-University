@@ -1,481 +1,249 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Path To University - Programa Gratuito Cali</title>
+  <title>Path To University | Fundación</title>
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-sky-500 selection:text-white">
 
-  <!-- HEADER / NAVEGACIÓN -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+  <!-- NAVEGACIÓN -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- LOGO OFICIAL -->
-      <a href="#" class="flex items-center">
-        <img src="logo.jpg" alt="Path To University Logo" class="h-10 md:h-12 w-auto object-contain">
+      <!-- LOGO / INICIO -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-sky-400 rounded-xl flex items-center justify-center text-white text-xl font-black shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-slate-900 text-lg leading-tight tracking-tight">PATH TO</span>
+          <span class="font-bold text-sky-500 text-xs tracking-widest uppercase">UNIVERSITY</span>
+        </div>
       </a>
-      
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-        <a href="#nosotros" class="hover:text-blue-600 transition">Nosotros</a>
-        <a href="#como-funciona" class="hover:text-blue-600 transition">Cómo funciona</a>
-        <a href="#requisitos" class="hover:text-blue-600 transition">Requisitos</a>
-        <a href="#testimonios" class="hover:text-blue-600 transition">Testimonios</a>
-        <a href="#faq" class="hover:text-blue-600 transition">Preguntas frecuentes</a>
+
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+        <a href="#como-funciona" class="hover:text-blue-600 transition-colors">¿Cómo funciona?</a>
+        <a href="#requisitos" class="hover:text-blue-600 transition-colors">Requisitos</a>
+        <a href="#proceso" class="hover:text-blue-600 transition-colors">Proceso</a>
       </nav>
 
-      <a href="#form" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-blue-600/20 transition">
-        Proceso de Selección
-      </a>
+      <!-- BOTÓN DE ACCIÓN / POSTULARSE -->
+      <div class="flex items-center gap-4">
+        <a href="#postularse" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white font-bold text-sm px-6 py-3 rounded-full shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition-all">
+          Postularse Ahora
+        </a>
+      </div>
+
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20 lg:py-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10">
-      
-      <!-- Texto Principal -->
-      <div class="lg:col-span-6 space-y-6">
-        <span class="bg-sky-400/20 border border-sky-300/30 text-sky-200 text-xs font-bold px-4 py-2 rounded-full inline-block">
-          PROGRAMA 100% GRATUITO - CALI 2026
-        </span>
-        <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight">
-          Inicia el camino hacia un mejor futuro <br>
-          <span class="text-blue-400">Path To University</span>
+  <!-- SECCIÓN HERO -->
+  <section class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden bg-gradient-to-b from-sky-50/50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100/80 border border-sky-200 text-sky-700 text-xs font-bold uppercase tracking-wider">
+          <i class="fa-solid fa-star text-sky-500"></i> Programa 100% Gratuito
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
+          Construye tu camino hacia la <span class="bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent">Universidad</span>
         </h1>
-        <div class="pt-2 flex flex-wrap gap-4">
-          <a href="#form" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-xl text-sm shadow-lg shadow-blue-600/30 transition">
-            Iniciar mi Postulación <i class="fa-solid fa-arrow-right ml-2"></i>
+
+        <p class="text-slate-600 text-lg md:text-xl font-normal leading-relaxed">
+          Acompañamos a estudiantes destacados brindándoles herramientas, educación en inglés, mentorías y el apoyo necesario para acceder a la educación superior.
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#postularse" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 transition-all text-center">
+            Inicia tu Postulación <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
           </a>
-          <a href="#nosotros" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-7 py-3.5 rounded-xl text-sm backdrop-blur transition">
-            Conocer más
+          <a href="#como-funciona" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold text-base px-8 py-4 rounded-2xl transition-all text-center">
+            Conocer Más
           </a>
         </div>
-      </div>
 
-      <!-- VIDEO PRINCIPAL DE YOUTUBE -->
-      <div class="lg:col-span-6">
-        <div class="bg-slate-800/80 border border-slate-700/60 rounded-3xl p-4 shadow-2xl backdrop-blur-md">
-          <div class="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-700 shadow-inner">
-            <iframe 
-              class="w-full h-full" 
-              src="https://www.youtube.com/embed/UAzeb9ukmMY" 
-              title="Path To University - Video Principal" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- NUEVA SECCIÓN: NOSOTROS -->
-  <section id="nosotros" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm space-y-6 text-center">
-        <span class="text-blue-600 text-xs font-extrabold uppercase tracking-widest bg-blue-100/60 px-3 py-1.5 rounded-lg inline-block">
-          Sobre Nosotros
+
+  <!-- SECCIÓN: ¿CÓMO FUNCIONA? (Diseño Dinámico e Impactante) -->
+  <section id="como-funciona" class="relative py-24 bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white overflow-hidden">
+    
+    <!-- Efectos de luz y resplandor en el fondo -->
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-10 w-72 h-72 bg-sky-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <!-- Encabezado de la Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="bg-blue-500/20 border border-blue-400/30 text-sky-300 text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block shadow-sm">
+          Acompañamiento Integral
         </span>
-        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">
-          ¿Quiénes Somos?
+        <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">
+          ¿Cómo funciona?
         </h2>
-        <p class="text-slate-800 font-medium text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-          Somos un grupo de profesionales y docentes apasionados por acelerar el proceso de aprendizaje para aquellos estudiantes que tienen el impulso pero no cuentan con los medios y mentores para hacer sus sueños realidad.
+        <p class="text-slate-300 text-base md:text-lg leading-relaxed font-normal">
+          Cada estudiante seleccionado recibirá de <span class="text-sky-400 font-bold">Path To University</span> todos los recursos y acompañamiento necesarios para construir su futuro universitario. <span class="text-white font-semibold">Son 100% gratuitos y constan de:</span>
         </p>
-        <div class="pt-4 border-t border-slate-200 max-w-2xl mx-auto">
-          <p class="text-slate-900 font-medium italic text-sm md:text-base leading-relaxed">
-            “Mi nombre es Klaus Smit. Nací y crecí en Cali, Colombia y actualmente vivo en los Estados Unidos. Me apasionan las matemáticas y las ciencias, los deportes acuáticos y la educación”.
+      </div>
+
+      <!-- Grid de Beneficios -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 1. Computadora -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-amber-500 to-orange-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-laptop"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Computadora</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Cada niño recibirá una computadora portátil al iniciar el programa.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SECCIÓN: ¿CÓMO FUNCIONA? -->
-  <section id="como-funciona" class="py-20 max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-blue-700 tracking-tight">¿Cómo funciona?</h2>
-      <p class="text-slate-900 mt-4 text-base font-semibold leading-relaxed">
-        Cada estudiante que ingrese al programa recibirá de Path To University los recursos y acompañamientos que le permitirán desarrollar su futuro universitario. Son totalmente gratuitos y constan de:
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- 1. Computadora -->
-      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center">
-        <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-3xl mb-6 mx-auto">
-          <i class="fa-solid fa-laptop"></i>
-        </div>
-        <h3 class="font-extrabold text-xl text-slate-900 mb-3">Computadora</h3>
-        <p class="text-slate-900 font-medium text-sm leading-relaxed">
-          Cada niño recibirá una computadora portátil al iniciar el programa
-        </p>
-      </div>
-
-      <!-- 2. Aprende Inglés -->
-      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center">
-        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-6 mx-auto">
-          <i class="fa-solid fa-language"></i>
-        </div>
-        <h3 class="font-extrabold text-xl text-slate-900 mb-3">Aprende Inglés</h3>
-        <p class="text-slate-900 font-medium text-sm leading-relaxed">
-          Inscripción en las clases de inglés en el Colombo Americano en Cali Los sábados de 9 a 12 a.m.
-        </p>
-      </div>
-
-      <!-- 3. Matemáticas -->
-      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center">
-        <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-3xl mb-6 mx-auto">
-          <i class="fa-solid fa-calculator"></i>
-        </div>
-        <h3 class="font-extrabold text-xl text-slate-900 mb-3">Matemáticas</h3>
-        <p class="text-slate-900 font-medium text-sm leading-relaxed">
-          1 hora de mentoría en matemáticas y ciencias a través de Khan Academy 2 veces por semana
-        </p>
-      </div>
-
-      <!-- 4. Proyectos -->
-      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center">
-        <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-3xl mb-6 mx-auto">
-          <i class="fa-solid fa-rocket"></i>
-        </div>
-        <h3 class="font-extrabold text-xl text-slate-900 mb-3">Proyectos</h3>
-        <p class="text-slate-900 font-medium text-sm leading-relaxed">
-          Tutoría a través de 2 a 3 proyectos que fomentan el crecimiento profesional y las posibilidades del estudiante de ingresar a la Universidad.
-        </p>
-      </div>
-
-      <!-- 5. Examenes -->
-      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center">
-        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl mb-6 mx-auto">
-          <i class="fa-solid fa-list-check"></i>
-        </div>
-        <h3 class="font-extrabold text-xl text-slate-900 mb-3">Examenes</h3>
-        <p class="text-slate-900 font-medium text-sm leading-relaxed">
-          Tutoría SAT / ICFES en grados 10 y 11
-        </p>
-      </div>
-
-      <!-- 6. Aplicación a universidades -->
-      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center">
-        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mb-6 mx-auto">
-          <i class="fa-solid fa-graduation-cap"></i>
-        </div>
-        <h3 class="font-extrabold text-xl text-slate-900 mb-3">Aplicación a universidades</h3>
-        <p class="text-slate-900 font-medium text-sm leading-relaxed">
-          Mentoría y apoyo económico para el proceso de postulación a la universidad.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECCIÓN: REQUISITOS Y FORMULARIO -->
-  <section id="requisitos" class="py-20 bg-slate-100/70 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
-      
-      <!-- Información / Requisitos -->
-      <div class="lg:col-span-5 space-y-6">
-        <h2 class="text-3xl font-extrabold text-blue-700 leading-tight">
-          Si deseas aspirar a este plan debes tener en cuenta esto antes de llenar el formulario.
-        </h2>
-
-        <div class="space-y-6 pt-2">
-          <!-- Item 1: Requisitos -->
-          <div class="flex gap-4 items-start">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 shadow">
-              1
-            </div>
-            <div>
-              <h4 class="font-extrabold text-blue-800 text-lg">Requisitos</h4>
-              <p class="text-sm text-slate-700 mt-1 leading-relaxed">
-                El programa está disponible para estudiantes en colegios públicos de Cali en grado sexto. La fecha límite para enviar la aplicación es Mayo 31 del 2026.
-              </p>
-            </div>
+        <!-- 2. Aprende Inglés -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-blue-600 to-sky-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-language"></i>
           </div>
-
-          <!-- Item 2: Entrevista -->
-          <div class="flex gap-4 items-start">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 shadow">
-              2
-            </div>
-            <div>
-              <h4 class="font-extrabold text-blue-800 text-lg">Entrevista</h4>
-              <p class="text-sm text-slate-700 mt-1 leading-relaxed">
-                Tener disponibilidad para una entrevista de 1 hora con padres e hijo.
-              </p>
-            </div>
-          </div>
-
-          <!-- Item 3: Calificaciones -->
-          <div class="flex gap-4 items-start">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 shadow">
-              3
-            </div>
-            <div>
-              <h4 class="font-extrabold text-blue-800 text-lg">Calificaciones</h4>
-              <p class="text-sm text-slate-700 mt-1 leading-relaxed">
-                Envío de calificaciones: Promedio 3.7 o superior. Nota mínima en cualquier asignatura: 3.3
-              </p>
-            </div>
-          </div>
-
-          <!-- Item 4: Ensayo -->
-          <div class="flex gap-4 items-start">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 shadow">
-              4
-            </div>
-            <div class="space-y-2">
-              <h4 class="font-extrabold text-blue-800 text-lg">Ensayo</h4>
-              <p class="text-sm text-slate-700 leading-relaxed">
-                Enviar un ensayo en formato PDF o Word de una (1) página que contenga tres (3) párrafos, fuente Times New Roman tamaño 12, espacio sencillo y con un límite máximo de 500 palabras.
-              </p>
-              <div class="bg-blue-50/80 p-3.5 rounded-xl text-xs text-blue-900 space-y-1.5 border border-blue-100">
-                <p><b>1er párrafo:</b> Cuéntame un poco de ti.</p>
-                <p><b>2do párrafo:</b> ¿Por qué quieres estar en el programa?</p>
-                <p><b>3er párrafo:</b> ¿Cómo vas a lograr completar el programa?</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Nota de Selección -->
-          <div class="p-4 bg-blue-50 rounded-2xl border border-blue-100 text-blue-900 text-xs font-semibold leading-relaxed">
-            Basado en la entrevista, notas y ensayo se van a seleccionar 5 estudiantes entre los aspirantes.
-          </div>
-        </div>
-      </div>
-
-      <!-- FORMULARIO DE CONEXIÓN A GOOGLE SHEETS -->
-      <div id="form" class="lg:col-span-7">
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10">
-          <div class="bg-blue-600 text-white p-6 rounded-2xl mb-6">
-            <h3 class="text-2xl font-black">Da tu primer paso hacia un futuro mejor</h3>
-            <p class="text-xs text-blue-100 mt-1">Completa todos los campos. Tu información llegará segura a nuestro equipo.</p>
-          </div>
-
-          <form id="studentAppForm" onsubmit="handleSubmit(event)" class="space-y-4">
-            <input type="text" required id="studentName" placeholder="Nombre Completo del Estudiante *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-            
-            <input type="text" required id="parentsName" placeholder="Nombre de Padres / Acudientes *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <input type="email" required id="studentEmail" placeholder="Correo de contacto *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-              <input type="tel" required id="studentPhone" placeholder="Teléfono / WhatsApp *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-xs font-bold text-slate-500 block mb-1">Edad</label>
-                <input type="number" required id="studentAge" min="10" max="15" value="11" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-              </div>
-              <div>
-                <label class="text-xs font-bold text-slate-500 block mb-1">Colegio Actual *</label>
-                <input type="text" required id="studentSchool" placeholder="Nombre de tu colegio *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-              </div>
-            </div>
-
-            <!-- ADJUNTAR BOLETÍN DE NOTAS / ENSAYO -->
-            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-5 text-center bg-slate-50 relative hover:bg-slate-100 transition">
-              <input type="file" id="fileAttachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('fileName').innerText='Archivo: '+this.files[0].name">
-              <p class="font-bold text-sm text-slate-700"><i class="fa-solid fa-cloud-arrow-up mr-2 text-blue-600"></i>Boletín de Notas / Ensayo</p>
-              <p id="fileName" class="text-xs text-slate-500 mt-1">PDF, Word, JPG o PNG - Haz clic para seleccionar</p>
-            </div>
-
-            <div>
-              <label class="text-xs font-bold text-slate-700 block mb-1">Tu ensayo de motivación (3 párrafos) *</label>
-              <p class="text-xs text-slate-500 mb-2">Cuéntanos: 1. ¿Quién eres? 2. ¿Por qué quieres estar en el programa? 3. ¿Cómo vas a lograr completarlo?</p>
-              <textarea id="essayText" rows="5" required maxlength="3000" placeholder="Escribe aquí tu ensayo..." class="w-full p-3.5 border border-slate-200 rounded-2xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600"></textarea>
-            </div>
-
-            <!-- CASILLA DE CONSENTIMIENTO OBLIGATORIA (SIN PRE-MARCAR) -->
-            <div class="flex items-start gap-3 pt-2">
-              <input type="checkbox" required id="dataConsent" class="mt-1 w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer">
-              <label for="dataConsent" class="text-xs text-slate-600 leading-relaxed cursor-pointer">
-                Autorizo expresamente el tratamiento de los datos personales de mi hijo/a para fines exclusivos del proceso de selección y desarrollo del programa, de acuerdo con nuestra <a href="politica-datos.html" target="_blank" class="text-blue-600 font-bold underline hover:text-blue-800">Política de Tratamiento de Datos</a>. *
-              </label>
-            </div>
-
-            <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-xl text-base shadow-lg shadow-blue-600/20 transition">
-              <i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud
-            </button>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECCIÓN: TESTIMONIOS -->
-  <section id="testimonios" class="py-20 max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <span class="text-blue-600 text-xs font-extrabold uppercase tracking-widest bg-blue-50 px-3 py-1.5 rounded-lg">Testimonios</span>
-      <h2 class="text-3xl font-extrabold text-slate-900 mt-4">Un mejor futuro te espera</h2>
-      <p class="text-slate-600 mt-2 text-sm">Conoce las experiencias de nuestros estudiantes y familias.</p>
-    </div>
-
-    <!-- Video de Testimonio Principal -->
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl space-y-4">
-        <div class="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-md">
-          <iframe 
-            class="w-full h-full" 
-            src="https://www.youtube.com/embed/3_I9sq54wTs" 
-            title="Testimonios - Path To University" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="pt-2">
-          <h4 class="font-bold text-slate-900 text-lg">Historias de Impacto</h4>
-          <p class="text-sm text-slate-600 mt-1">
-            Escucha a los estudiantes y familias compartiendo su experiencia en Path To University.
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Aprende Inglés</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Inscripción en las clases de inglés en el Colombo Americano en Cali, los sábados de 9 a 12 a.m.
           </p>
         </div>
+
+        <!-- 3. Matemáticas -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-cyan-500 to-blue-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-calculator"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Matemáticas</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            1 hora de mentoría en matemáticas y ciencias a través de Khan Academy, 2 veces por semana.
+          </p>
+        </div>
+
+        <!-- 4. Proyectos -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-indigo-500 to-blue-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Proyectos</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Tutoría a través de 2 a 3 proyectos que fomentan el crecimiento profesional y las posibilidades del estudiante de ingresar a la universidad.
+          </p>
+        </div>
+
+        <!-- 5. Exámenes -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-sky-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-sky-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Exámenes</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Tutoría y preparación especializada para pruebas SAT / ICFES en grados 10º y 11º.
+          </p>
+        </div>
+
+        <!-- 6. Aplicación a Universidades -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-teal-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Aplicación a Universidades</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Mentoría personalizada y apoyo económico para todo el proceso de postulación a la universidad.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN: PREGUNTAS FRECUENTES (FAQ) -->
-  <section id="faq" class="py-20 bg-slate-100/70 border-t border-slate-200">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <h2 class="text-3xl font-extrabold text-slate-900">Preguntas frecuentes</h2>
+
+  <!-- SECCIÓN REQUISITOS -->
+  <section id="requisitos" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="bg-blue-100 text-blue-700 text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">
+          Criterios de Selección
+        </span>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+          Requisitos para Postularte
+        </h2>
+        <p class="text-slate-600 text-base md:text-lg">
+          Buscamos estudiantes comprometidos con ganas de transformar su futuro.
+        </p>
       </div>
 
-      <div class="space-y-4">
-        <details class="group bg-white p-6 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm">
-            ¿El programa tiene algún costo?
-            <span class="ml-1.5 flex-shrink-0 transition duration-300 group-open:-rotate-180">
-              <i class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
-            </span>
-          </summary>
-          <p class="mt-3 text-xs text-slate-600 leading-relaxed">No, el programa es 100% gratuito para todos los estudiantes seleccionados.</p>
-        </details>
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="bg-slate-50 border border-slate-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-slate-200/50 transition-all">
+          <div class="w-12 h-12 bg-sky-500 text-white rounded-2xl flex items-center justify-center text-xl mb-6 font-bold">
+            1
+          </div>
+          <h3 class="font-bold text-xl text-slate-900 mb-2">Grado Académico</h3>
+          <p class="text-slate-600 text-sm">Estar cursando grado 8º, 9º o 10º en una institución educativa pública.</p>
+        </div>
 
-        <details class="group bg-white p-6 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm">
-            ¿Se necesita inglés para ingresar al programa?
-            <span class="ml-1.5 flex-shrink-0 transition duration-300 group-open:-rotate-180">
-              <i class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
-            </span>
-          </summary>
-          <p class="mt-3 text-xs text-slate-600 leading-relaxed">No es un requisito previo. Nosotros nos encargamos de guiarte y enseñarte desde el nivel básico.</p>
-        </details>
+        <div class="bg-slate-50 border border-slate-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-slate-200/50 transition-all">
+          <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-xl mb-6 font-bold">
+            2
+          </div>
+          <h3 class="font-bold text-xl text-slate-900 mb-2">Desempeño Académico</h3>
+          <p class="text-slate-600 text-sm">Contar con un promedio académico destacado y compromiso constante.</p>
+        </div>
 
-        <details class="group bg-white p-6 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm">
-            ¿La computadora es prestada o regalada?
-            <span class="ml-1.5 flex-shrink-0 transition duration-300 group-open:-rotate-180">
-              <i class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
-            </span>
-          </summary>
-          <p class="mt-3 text-xs text-slate-600 leading-relaxed">Los equipos se asignan en calidad de préstamo o donación según el rendimiento y avance del estudiante durante el programa.</p>
-        </details>
+        <div class="bg-slate-50 border border-slate-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-slate-200/50 transition-all">
+          <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-xl mb-6 font-bold">
+            3
+          </div>
+          <h3 class="font-bold text-xl text-slate-900 mb-2">Disponibilidad</h3>
+          <p class="text-slate-600 text-sm">Asistir a las clases presenciales los sábados y mentorías semanales.</p>
+        </div>
 
-        <details class="group bg-white p-6 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm">
-            Una vez aceptado en el programa, ¿cuáles son los requisitos para permanecer en él?
-            <span class="ml-1.5 flex-shrink-0 transition duration-300 group-open:-rotate-180">
-              <i class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
-            </span>
-          </summary>
-          <p class="mt-3 text-xs text-slate-600 leading-relaxed">Mantener un buen rendimiento escolar, puntualidad y un compromiso activo con los talleres y asignaciones.</p>
-        </details>
-
-        <details class="group bg-white p-6 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-          <summary class="flex items-center justify-between font-bold text-slate-900 text-sm">
-            ¿Tiene algún costo adicional el programa?
-            <span class="ml-1.5 flex-shrink-0 transition duration-300 group-open:-rotate-180">
-              <i class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
-            </span>
-          </summary>
-          <p class="mt-3 text-xs text-slate-600 leading-relaxed">Ninguno. Todo el material pedagógico e instrucción ofrecida son totalmente gratuitos.</p>
-        </details>
       </div>
+
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      
-      <!-- LOGO EN FOOTER -->
-      <div class="flex items-center">
-        <img src="logo.jpg" alt="Path To University Logo" class="h-8 md:h-10 w-auto object-contain bg-white/10 p-1 rounded-lg backdrop-blur">
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+      <div class="flex items-center justify-center gap-3">
+        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-base font-black">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="font-extrabold text-white tracking-tight">PATH TO UNIVERSITY</span>
       </div>
-
-      <!-- CORREO DE CONTACTO Y DERECHOS -->
-      <div class="text-center md:text-left space-y-1">
-        <p class="text-xs text-slate-400">© 2026 Path To University - Cali, Colombia | Programa gratuito</p>
-        <p class="text-xs text-blue-400 font-medium">
-          <i class="fa-solid fa-envelope mr-1.5"></i>Contacto: <a href="mailto:contacto@pathtouniversity.co" class="hover:underline">contacto@pathtouniversity.co</a>
-        </p>
-      </div>
-
-      <div class="flex gap-4 text-slate-400 text-lg">
-        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
-      </div>
+      <p class="text-xs text-slate-500">
+        &copy; Todos los derechos reservados. Impulsando la educación del mañana.
+      </p>
     </div>
   </footer>
-
-  <!-- MODAL DE ÉXITO -->
-  <div id="successModal" class="fixed inset-0 bg-slate-900/70 hidden flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-3xl p-8 text-center max-w-md w-full shadow-2xl">
-      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
-        <i class="fa-solid fa-check"></i>
-      </div>
-      <h3 class="text-2xl font-black">¡Solicitud Enviada!</h3>
-      <p class="text-sm text-slate-600 mt-2">La hemos recibido correctamente. Revisaremos tu ensayo y boletín. Código: <span id="code" class="font-bold text-blue-600"></span></p>
-      <p class="text-xs text-slate-400 mt-2">Ya puedes verlo en tu Google Sheet.</p>
-      <button onclick="location.reload()" class="mt-6 w-full bg-blue-600 text-white font-bold py-3 rounded-xl">Perfecto</button>
-    </div>
-  </div>
-
-  <!-- SCRIPT DE ENVÍO A GOOGLE SHEETS -->
-  <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzAydf9-1ThrIo_wUtW-eDJAmbyfes8wox5MtKqR_KgrYvi8JrYID2sx3guVsP6kvo_4w/exec';
-    
-    function handleSubmit(e){
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Enviando...'; 
-      btn.disabled = true;
-
-      const params = new URLSearchParams();
-      params.append('nombre', document.getElementById('studentName').value);
-      params.append('correo', document.getElementById('studentEmail').value);
-      params.append('telefono', document.getElementById('studentPhone').value);
-      params.append('universidad', document.getElementById('studentSchool').value + ' | Edad:' + document.getElementById('studentAge').value + ' | Padres:' + document.getElementById('parentsName').value);
-      params.append('mensaje', 'ENSAYO: ' + document.getElementById('essayText').value + ' | ARCHIVO NOTAS: ' + (document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo'));
-
-      fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params })
-        .then(() => {
-          document.getElementById('code').innerText = 'PTU-' + Math.floor(1000 + Math.random() * 9000);
-          document.getElementById('successModal').classList.remove('hidden');
-          btn.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud'; 
-          btn.disabled = false;
-        })
-        .catch(() => {
-          alert('Error, intenta de nuevo'); 
-          btn.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud'; 
-          btn.disabled = false;
-        });
-    }
-  </script>
 
 </body>
 </html>
