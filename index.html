@@ -248,20 +248,10 @@
             </div>
 
             <!-- ADJUNTAR BOLETÍN DE NOTAS / ENSAYO -->
-            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-4 text-center bg-slate-50 relative hover:bg-slate-100 transition">
+            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-5 text-center bg-slate-50 relative hover:bg-slate-100 transition">
               <input type="file" id="fileAttachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('fileName').innerText='Archivo: '+this.files[0].name">
               <p class="font-bold text-sm text-slate-700"><i class="fa-solid fa-cloud-arrow-up mr-2 text-blue-600"></i>Boletín de Notas / Ensayo</p>
               <p id="fileName" class="text-xs text-slate-500 mt-1">PDF, Word, JPG o PNG - Haz clic para seleccionar</p>
-            </div>
-
-            <!-- ADJUNTAR AUTORIZACIÓN FIRMADA DE LOS PADRES (OBLIGATORIO) -->
-            <div>
-              <label class="text-xs font-bold text-slate-700 block mb-1">Autorización firmada de los padres (PDF) *</label>
-              <div class="border-2 border-dashed border-slate-300 rounded-2xl p-4 text-center bg-slate-50 relative hover:bg-slate-100 transition">
-                <input type="file" required id="parentAuthAttachment" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('authFileName').innerText='Archivo: '+this.files[0].name">
-                <p class="font-bold text-sm text-slate-700"><i class="fa-solid fa-file-signature mr-2 text-purple-600"></i>Subir Autorización de Padres *</p>
-                <p id="authFileName" class="text-xs text-slate-500 mt-1">Solo formato PDF - Obligatorio</p>
-              </div>
             </div>
 
             <div>
@@ -433,7 +423,7 @@
       params.append('correo', document.getElementById('studentEmail').value);
       params.append('telefono', document.getElementById('studentPhone').value);
       params.append('universidad', document.getElementById('studentSchool').value + ' | Edad:' + document.getElementById('studentAge').value + ' | Padres:' + document.getElementById('parentsName').value);
-      params.append('mensaje', 'ENSAYO: ' + document.getElementById('essayText').value + ' | ARCHIVO NOTAS: ' + (document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo') + ' | AUTORIZACIÓN PADRES: ' + (document.getElementById('parentAuthAttachment').files[0]?.name || 'Sin archivo'));
+      params.append('mensaje', 'ENSAYO: ' + document.getElementById('essayText').value + ' | ARCHIVO NOTAS: ' + (document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo'));
 
       fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params })
         .then(() => {
