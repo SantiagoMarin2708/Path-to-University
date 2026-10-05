@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Script oficial de Tally para ajuste automático de altura -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
   </style>
@@ -192,9 +194,9 @@
     </div>
   </section>
 
-  <!-- SECCIÓN: REQUISITOS Y FORMULARIO -->
+  <!-- SECCIÓN: REQUISITOS Y FORMULARIO INTEGRADO TALLY.SO -->
   <section id="requisitos" class="py-20 bg-slate-100/70 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
       
       <!-- Información / Requisitos -->
       <div class="lg:col-span-5 space-y-6">
@@ -266,58 +268,19 @@
         </div>
       </div>
 
-      <!-- FORMULARIO DE CONEXIÓN A GOOGLE SHEETS -->
+      <!-- NUEVO FORMULARIO NATIVO DE TALLY.SO -->
       <div id="form" class="lg:col-span-7">
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10">
-          <div class="bg-blue-600 text-white p-6 rounded-2xl mb-6">
-            <h3 class="text-2xl font-black">Da tu primer paso hacia un futuro mejor</h3>
-            <p class="text-xs text-blue-100 mt-1">Completa todos los campos. Tu información llegará segura a nuestro equipo.</p>
-          </div>
-
-          <form id="studentAppForm" onsubmit="handleSubmit(event)" class="space-y-4">
-            <input type="text" required id="studentName" placeholder="Nombre Completo del Estudiante *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-            
-            <input type="text" required id="parentsName" placeholder="Nombre de Padres / Acudientes *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <input type="email" required id="studentEmail" placeholder="Correo de contacto *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-              <input type="tel" required id="studentPhone" placeholder="Teléfono / WhatsApp *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-xs font-bold text-slate-500 block mb-1">Edad</label>
-                <input type="number" required id="studentAge" min="10" max="15" value="11" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-              </div>
-              <div>
-                <label class="text-xs font-bold text-slate-500 block mb-1">Colegio Actual *</label>
-                <input type="text" required id="studentSchool" placeholder="Nombre de tu colegio *" class="w-full p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600">
-              </div>
-            </div>
-
-            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-5 text-center bg-slate-50 relative hover:bg-slate-100 transition">
-              <input type="file" id="fileAttachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" class="absolute inset-0 opacity-0 cursor-pointer" onchange="document.getElementById('fileName').innerText='Archivo: '+this.files[0].name">
-              <p class="font-bold text-sm text-slate-700"><i class="fa-solid fa-cloud-arrow-up mr-2 text-blue-600"></i>Boletín de Notas / Ensayo</p>
-              <p id="fileName" class="text-xs text-slate-500 mt-1">PDF, Word, JPG o PNG - Haz clic para seleccionar</p>
-            </div>
-
-            <div>
-              <label class="text-xs font-bold text-slate-700 block mb-1">Tu ensayo de motivación (3 párrafos) *</label>
-              <p class="text-xs text-slate-500 mb-2">Cuéntanos: 1. ¿Quién eres? 2. ¿Por qué quieres estar en el programa? 3. ¿Cómo vas a lograr completarlo?</p>
-              <textarea id="essayText" rows="5" required maxlength="3000" placeholder="Escribe aquí tu ensayo..." class="w-full p-3.5 border border-slate-200 rounded-2xl bg-slate-50 text-sm focus:outline-none focus:border-blue-600"></textarea>
-            </div>
-
-            <div class="flex items-start gap-3 pt-2">
-              <input type="checkbox" required id="dataConsent" class="mt-1 w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer">
-              <label for="dataConsent" class="text-xs text-slate-600 leading-relaxed cursor-pointer">
-                Autorizo expresamente el tratamiento de los datos personales de mi hijo/a para fines exclusivos del proceso de selección y desarrollo del programa, de acuerdo con nuestra <a href="politica-datos.html" target="_blank" class="text-blue-600 font-bold underline hover:text-blue-800">Política de Tratamiento de Datos</a>. *
-              </label>
-            </div>
-
-            <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-xl text-base shadow-lg shadow-blue-600/20 transition">
-              <i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud
-            </button>
-          </form>
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-4 md:p-6 overflow-hidden">
+          <iframe 
+            data-tally-src="https://tally.so/embed/Pda9zd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+            loading="lazy" 
+            width="100%" 
+            height="700" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            title="Postulación Path To University">
+          </iframe>
         </div>
       </div>
 
@@ -354,7 +317,7 @@
     </div>
   </section>
 
-  <!-- SECCIÓN: PREGUNTAS FRECUENTES (FAQ EXACTAS CON LETRA NEGRA) -->
+  <!-- SECCIÓN: PREGUNTAS FRECUENTES -->
   <section id="faq" class="py-20 bg-slate-100/70 border-t border-slate-200">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-14">
@@ -458,7 +421,7 @@
       <div class="text-center md:text-left space-y-1">
         <p class="text-xs text-slate-400 font-medium">Cali, Colombia</p>
         <p class="text-xs text-blue-400 font-medium">
-          <i class="fa-solid fa-envelope mr-1.5"></i><a href="mailto:contacto@pathtouniversity.co" class="hover:underline">contacto@pathtouniversity.co</a>
+          <i class="fa-solid fa-envelope mr-1.5"></i><a href="mailto:info.pathtouniversity@gmail.com" class="hover:underline">info.pathtouniversity@gmail.com</a>
         </p>
       </div>
 
@@ -472,51 +435,6 @@
 
     </div>
   </footer>
-
-  <!-- MODAL DE ÉXITO -->
-  <div id="successModal" class="fixed inset-0 bg-slate-900/70 hidden flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-3xl p-8 text-center max-w-md w-full shadow-2xl">
-      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
-        <i class="fa-solid fa-check"></i>
-      </div>
-      <h3 class="text-2xl font-black text-slate-900">¡Solicitud Enviada!</h3>
-      <p class="text-sm text-slate-600 mt-2">La hemos recibido correctamente. Revisaremos tu ensayo y boletín. Código: <span id="code" class="font-bold text-blue-600"></span></p>
-      <p class="text-xs text-slate-400 mt-2">Ya puedes verlo en tu Google Sheet.</p>
-      <button onclick="location.reload()" class="mt-6 w-full bg-blue-600 text-white font-bold py-3 rounded-xl">Perfecto</button>
-    </div>
-  </div>
-
-  <!-- SCRIPT DE ENVÍO A GOOGLE SHEETS -->
-  <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzAydf9-1ThrIo_wUtW-eDJAmbyfes8wox5MtKqR_KgrYvi8JrYID2sx3guVsP6kvo_4w/exec';
-    
-    function handleSubmit(e){
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Enviando...'; 
-      btn.disabled = true;
-
-      const params = new URLSearchParams();
-      params.append('nombre', document.getElementById('studentName').value);
-      params.append('correo', document.getElementById('studentEmail').value);
-      params.append('telefono', document.getElementById('studentPhone').value);
-      params.append('universidad', document.getElementById('studentSchool').value + ' | Edad:' + document.getElementById('studentAge').value + ' | Padres:' + document.getElementById('parentsName').value);
-      params.append('mensaje', 'ENSAYO: ' + document.getElementById('essayText').value + ' | ARCHIVO NOTAS: ' + (document.getElementById('fileAttachment').files[0]?.name || 'Sin archivo'));
-
-      fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params })
-        .then(() => {
-          document.getElementById('code').innerText = 'PTU-' + Math.floor(1000 + Math.random() * 9000);
-          document.getElementById('successModal').classList.remove('hidden');
-          btn.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud'; 
-          btn.disabled = false;
-        })
-        .catch(() => {
-          alert('Error, intenta de nuevo'); 
-          btn.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitud'; 
-          btn.disabled = false;
-        });
-    }
-  </script>
 
 </body>
 </html>
