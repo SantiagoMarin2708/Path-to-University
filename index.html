@@ -13,12 +13,15 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-sky-500 selection:text-white">
 
-  <!-- 1. HEADER / NAVEGACIÓN -->
+  <!-- HEADER / NAVEGACIÓN -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- LOGO OFICIAL -->
       <a href="#" class="flex items-center">
         <img src="logo.jpg" alt="Path To University Logo" class="h-10 md:h-12 w-auto object-contain">
       </a>
+      
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
         <a href="#nosotros" class="hover:text-blue-600 transition">Nosotros</a>
         <a href="#como-funciona" class="hover:text-blue-600 transition">Cómo funciona</a>
@@ -27,15 +30,18 @@
         <a href="#testimonios" class="hover:text-blue-600 transition">Testimonios</a>
         <a href="#faq" class="hover:text-blue-600 transition">Preguntas frecuentes</a>
       </nav>
+
       <a href="#form" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-blue-600/20 transition">
         Proceso de Selección
       </a>
     </div>
   </header>
 
-  <!-- 2. HERO SECTION -->
+  <!-- HERO SECTION -->
   <section class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20 lg:py-28 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Texto Principal -->
       <div class="lg:col-span-6 space-y-6">
         <span class="bg-sky-400/20 border border-sky-300/30 text-sky-200 text-xs font-bold px-4 py-2 rounded-full inline-block">
           PROGRAMA 100% GRATUITO - CALI 2027
@@ -53,22 +59,36 @@
           </a>
         </div>
       </div>
+
+      <!-- VIDEO PRINCIPAL DE YOUTUBE -->
       <div class="lg:col-span-6">
         <div class="bg-slate-800/80 border border-slate-700/60 rounded-3xl p-4 shadow-2xl backdrop-blur-md">
           <div class="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-700 shadow-inner">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/UAzeb9ukmMY" title="Video Principal" frameborder="0" allowfullscreen></iframe>
+            <iframe 
+              class="w-full h-full" 
+              src="https://www.youtube.com/embed/UAzeb9ukmMY" 
+              title="Path To University - Video Principal" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- 3. NOSOTROS -->
+  <!-- SECCIÓN: NOSOTROS -->
   <section id="nosotros" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-5xl mx-auto px-6">
       <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm space-y-6 text-center">
-        <span class="text-blue-600 text-xs font-extrabold uppercase tracking-widest bg-blue-100/60 px-3 py-1.5 rounded-lg inline-block">Sobre Nosotros</span>
-        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">¿Quiénes Somos?</h2>
+        <span class="text-blue-600 text-xs font-extrabold uppercase tracking-widest bg-blue-100/60 px-3 py-1.5 rounded-lg inline-block">
+          Sobre Nosotros
+        </span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">
+          ¿Quiénes Somos?
+        </h2>
         <p class="text-slate-800 font-medium text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
           Somos un grupo de profesionales y docentes apasionados por acelerar el proceso de aprendizaje para aquellos estudiantes que tienen el impulso pero no cuentan con los medios y mentores para hacer sus sueños realidad.
         </p>
@@ -81,7 +101,147 @@
     </div>
   </section>
 
-  <!-- 4. CÓMO FUNCIONA -->
+  <!-- SECCIÓN: ¿CÓMO FUNCIONA? -->
   <section id="como-funciona" class="relative py-24 bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white overflow-hidden">
+    
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-10 w-72 h-72 bg-sky-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="text-center max-w
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="bg-blue-500/20 border border-blue-400/30 text-sky-300 text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block shadow-sm">
+          Acompañamiento Integral
+        </span>
+        <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">
+          ¿Cómo funciona?
+        </h2>
+        <p class="text-slate-300 text-base md:text-lg leading-relaxed font-normal">
+          Cada estudiante que ingrese al programa recibirá de <span class="text-sky-400 font-bold">Path To University</span> los recursos y acompañamientos que le permitirán desarrollar su futuro universitario. <span class="text-white font-semibold">Son totalmente gratuitos y constan de:</span>
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 1. Computadora -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-amber-500 to-orange-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-laptop"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Computadora</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Cada niño recibirá una computadora portátil al iniciar el programa.
+          </p>
+        </div>
+
+        <!-- 2. Aprende Inglés -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-blue-600 to-sky-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-language"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Aprende Inglés</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Inscripción en las clases de inglés en el Colombo Americano en Cali
+          </p>
+        </div>
+
+        <!-- 3. Matemáticas -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-cyan-500 to-blue-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-calculator"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Matemáticas</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            1 hora de mentoría en matemáticas y ciencias a través de Khan Academy.
+          </p>
+        </div>
+
+        <!-- 4. Proyectos -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-indigo-500 to-blue-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Proyectos</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Tutoría a través de 2 a 3 proyectos que fomentan el crecimiento profesional y las posibilidades del estudiante de ingresar a la Universidad.
+          </p>
+        </div>
+
+        <!-- 5. Exámenes -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-sky-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-sky-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Exámenes</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Tutoría SAT / ICFES en grados 10 y 11.
+          </p>
+        </div>
+
+        <!-- 6. Aplicación a Universidades -->
+        <div class="group relative bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 hover:border-sky-400/50 p-8 rounded-3xl transition-all duration-300 shadow-xl backdrop-blur-md hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-teal-400 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="font-extrabold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">Aplicación a Universidades</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Mentoría y apoyo económico para el proceso de postulación a la universidad.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: FECHAS CLAVE DE LA CONVOCATORIA 2027 -->
+  <section id="fechas" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-blue-600 text-xs font-extrabold uppercase tracking-widest bg-blue-100/60 px-3.5 py-1.5 rounded-lg inline-block">
+          Fechas Importantes
+        </span>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+          Cronograma de la Convocatoria 2027
+        </h2>
+        <p class="text-slate-600 text-sm md:text-base">
+          Ten en cuenta estas fechas para organizar tu postulación y no perder la oportunidad.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Fecha 1 -->
+        <div class="bg-slate-50 border border-slate-200 p-6 rounded-3xl relative hover:border-blue-500 transition shadow-sm hover:shadow-md">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl font-black mb-4">
+            <i class="fa-solid fa-door-open"></i>
+          </div>
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-1">Apertura</span>
+          <h3 class="text-xl font-black text-slate-900 mb-2">Enero 20 de 2027</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Se abre oficialmente la convocatoria para enviar postulaciones.
+          </p>
+        </div>
+
+        <!-- Fecha 2 -->
+        <div class="bg-slate-50 border border-slate-200 p-6 rounded-3xl relative hover:border-amber-500 transition shadow-sm hover:shadow-md">
+          <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl font-black mb-4">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">Fecha Límite</span>
+          <h3 class="text-xl font-black text-slate-900 mb-2">Marzo 31 de 2027</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Último día para enviar la aplicación con el ensayo y calificaciones.
+          </p>
+        </div>
+
+        <!-- Fecha 3 -->
+        <div class="bg-slate-50 border border-slate-200 p-6 rounded-3xl relative hover:border-indigo-500 transition shadow-sm hover:shadow-md">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl font-black mb-4">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-1">Evaluación</span>
+          <h3 class="text-xl font-black text-slate-900 mb-2">Mayo de 2027</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Período de entrevistas de 1 hora con acudientes y postulantes preseleccionados.
+          </
